@@ -11,6 +11,9 @@ public class Ball : MonoBehaviour
     [SerializeField] private AudioClip[] ballSounds;
     [SerializeField] private float randomFactor = 0.1f;
 
+    [SerializeField] private float xOffset = 0;
+    [SerializeField] private float yOffset = 0;
+
     // state
     private Vector2 _paddleToBallVector;
     private bool _hasStarted = false;
@@ -49,7 +52,7 @@ public class Ball : MonoBehaviour
     private void LockBallToPaddle()
     {
         var position = paddle1.transform.position;
-        Vector2 paddlePos = new Vector2(position.x, position.y);
+        Vector2 paddlePos = new Vector2(position.x + xOffset, position.y + yOffset);
         transform.position = paddlePos + _paddleToBallVector;
     }
 

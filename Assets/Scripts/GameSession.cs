@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class GameSession : MonoBehaviour
     private int currentScore = 0;
     private float elapsedTime = 0;
     private bool gameRunning = false;
+    private string levelName;
 
     private void Awake()
     {
@@ -35,6 +37,7 @@ public class GameSession : MonoBehaviour
     {
         gameRunning = true;
         scoreText.text = currentScore.ToString();
+        levelName = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -79,5 +82,16 @@ public class GameSession : MonoBehaviour
     public void StopTimer()
     {
         gameRunning = false;
+    }
+
+    public void StartTimer()
+    {
+        gameRunning = true;
+    }
+    
+    public string LevelName
+    {
+        get { return levelName; }
+        set { levelName = value; }
     }
 }

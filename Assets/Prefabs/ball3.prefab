@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 549520484007760234}
   - component: {fileID: 549520484007760232}
   - component: {fileID: 1502949989}
+  - component: {fileID: 83522177}
   m_Layer: 0
   m_Name: ball3
   m_TagString: Untagged
@@ -135,11 +136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle1: {fileID: 0}
-  xPush: 2
+  xPush: 0
   yPush: 15
   ballSounds:
   - {fileID: 8300000, guid: 5b26a162729a84a45aa14ffc6ecb3e83, type: 3}
   - {fileID: 8300000, guid: 42dec6dc83dc93546878ffb7ce949931, type: 3}
+  randomFactor: 0.1
+  xOffset: 0
+  yOffset: 0
 --- !u!82 &1502949989
 AudioSource:
   m_ObjectHideFlags: 0
@@ -236,3 +240,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &83522177
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549520484007760239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7d77fed524835684e8b29f88561b92a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

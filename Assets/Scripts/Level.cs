@@ -26,8 +26,10 @@ public class Level : MonoBehaviour
         breakableBlocks--;
         if (breakableBlocks <= 0)
         {
-            _gameSession.ResetGame();
-            _sceneLoader.LoadMenuScene();
+            // _gameSession.ResetGame();
+            // _sceneLoader.LoadMenuScene();
+            _gameSession.StopTimer();
+            _sceneLoader.LoadLevelPass();
         }
     }
     
