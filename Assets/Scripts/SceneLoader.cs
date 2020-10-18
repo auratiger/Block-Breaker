@@ -28,7 +28,11 @@ public class SceneLoader : MonoBehaviour
         long numeber = Int64.Parse(i);
         
         LoadLevelByName("Level " + (numeber + 1));
-        
+    }
+
+    public void LoadLastLevel()
+    {
+        LoadLevelByName(_gameSession.LevelName);
     }
 
     public void LoadPreviousScene()
@@ -40,7 +44,8 @@ public class SceneLoader : MonoBehaviour
     public void LoadStartScene()
     {
         SceneManager.LoadScene("Start Menu");
-        _gameSession.ResetGame();
+        
+        if(_gameSession != null) _gameSession.ResetGame();
     }
 
     public void LoadLevelByName(string levelName)
@@ -62,6 +67,11 @@ public class SceneLoader : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void LoadSettingsMenu()
+    {
+        SceneManager.LoadScene("Settings Menu");
     }
     
 }

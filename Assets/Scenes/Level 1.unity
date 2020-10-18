@@ -455,6 +455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1502949989, guid: f09c51f56a9ff2b459295c32b1724332, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 549520484007760232, guid: f09c51f56a9ff2b459295c32b1724332,
         type: 3}
       propertyPath: paddle1

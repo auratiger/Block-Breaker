@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="AudioManager.cs" t="Include" />
           <e p="Ball.cs" t="Include" />
           <e p="Block.cs" t="Include" />
           <e p="GameSession.cs" t="Include" />
@@ -14,6 +15,7 @@
           <e p="LoseCollider.cs" t="Include" />
           <e p="Paddle.cs" t="Include" />
           <e p="SceneLoader.cs" t="Include" />
+          <e p="SettingsOptions.cs" t="Include" />
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">

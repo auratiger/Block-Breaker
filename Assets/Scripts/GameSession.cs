@@ -14,10 +14,11 @@ public class GameSession : MonoBehaviour
     [SerializeField] private bool isAutoPlayEnabled;
     
     // state
-    private int currentScore = 0;
-    private float elapsedTime = 0;
-    private bool gameRunning = false;
-    private string levelName;
+    private int _currentScore = 0;
+    private float _elapsedTime = 0;
+    private bool _gameRunning = false;
+    private string _levelName;
+    private int _controls = 0;
 
     private void Awake()
     {
@@ -35,9 +36,9 @@ public class GameSession : MonoBehaviour
 
     void Start()
     {
-        gameRunning = true;
-        scoreText.text = currentScore.ToString();
-        levelName = SceneManager.GetActiveScene().name;
+        _gameRunning = true;
+        scoreText.text = _currentScore.ToString();
+        _levelName = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class GameSession : MonoBehaviour
     {
         Time.timeScale = gameSpeed;
 
-        if (gameRunning)
+        if (_gameRunning)
         {
             CountTime();
         }
@@ -53,10 +54,10 @@ public class GameSession : MonoBehaviour
 
     private void CountTime()
     {
-        elapsedTime += Time.deltaTime;
+        _elapsedTime += Time.deltaTime;
 
-        float minutes = Mathf.Floor(elapsedTime / 60);
-        float seconds = Mathf.RoundToInt(elapsedTime % 60);
+        float minutes = Mathf.Floor(_elapsedTime / 60);
+        float seconds = Mathf.RoundToInt(_elapsedTime % 60);
 
         timeText.text =
             (minutes < 10 ? "0" + minutes.ToString() : minutes.ToString()) + ":" +
@@ -65,8 +66,8 @@ public class GameSession : MonoBehaviour
 
     public void AddToScore(int blockPoints)
     {
-        currentScore += blockPoints;
-        scoreText.text = currentScore.ToString();
+        _currentScore += blockPoints;
+        scoreText.text = _currentScore.ToString();
     }
 
     public void ResetGame()
@@ -81,17 +82,23 @@ public class GameSession : MonoBehaviour
 
     public void StopTimer()
     {
-        gameRunning = false;
+        _gameRunning = false;
     }
 
     public void StartTimer()
     {
-        gameRunning = true;
+        _gameRunning = true;
     }
     
     public string LevelName
     {
-        get { return levelName; }
-        set { levelName = value; }
+        get => _levelName;
+        set => _levelName = value;
+    }
+
+    public int Controls
+    {
+        get => _controls;
+        set => _controls = value;
     }
 }
