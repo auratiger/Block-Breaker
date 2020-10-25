@@ -7,7 +7,8 @@ public class Block : MonoBehaviour
 {
 
     // config
-    [SerializeField] private AudioClip breakSound;
+    // [SerializeField] private AudioClip breakSound;
+    [SerializeField] private GameObject blockSFX;
     [SerializeField] private GameObject blockSparklesVFX;
     [SerializeField] private Sprite[] hitSprites;
     [SerializeField] private int blockPoints;
@@ -66,10 +67,17 @@ public class Block : MonoBehaviour
     private void DestroyBlock()
     {
         FindObjectOfType<GameSession>().AddToScore(blockPoints);
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+        // AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+        TriggerSFX();
         Destroy(gameObject);
         _level.BlockDestroyed();
         TriggerSparklesVFX();
+    }
+    
+    private void TriggerSFX()
+    {
+        var sound = Instantiate(blockSFX, transform.position, transform.rotation);
+        Destroy(sound, 1f);
     }
 
     private void TriggerSparklesVFX()

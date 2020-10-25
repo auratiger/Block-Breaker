@@ -380,6 +380,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 410506505}
     m_Modifications:
+    - target: {fileID: 794149256508102361, guid: 8c2a6c1b2811fbc41ab27bb7a57c8856,
+        type: 3}
+      propertyPath: blockSFX
+      value: 
+      objectReference: {fileID: 2043421504159742502, guid: cea56a13d5bda3941bba8c14209a710c,
+        type: 3}
     - target: {fileID: 6779948490075137413, guid: 8c2a6c1b2811fbc41ab27bb7a57c8856,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -459,6 +465,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1502949989, guid: f09c51f56a9ff2b459295c32b1724332, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3260137424504967469, guid: a8e1e10b25173ce4bac29fe5f6b26001,
+        type: 2}
     - target: {fileID: 549520484007760232, guid: f09c51f56a9ff2b459295c32b1724332,
         type: 3}
       propertyPath: paddle1
@@ -546,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 1278284091110024635, guid: 8a73757cc48ae544c89ddeeff07db943,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.58111
+      value: 4.66
       objectReference: {fileID: 0}
     - target: {fileID: 1278284091110024635, guid: 8a73757cc48ae544c89ddeeff07db943,
         type: 3}

@@ -26,8 +26,8 @@ public class Paddle : MonoBehaviour
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
-        xMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + 1f;
-        xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - 1f;
+        xMin = gameCamera.WorldToViewportPoint(new Vector3(0, 0, 0)).x;
+        xMax = gameCamera.WorldToViewportPoint(new Vector3(1, 0, 0)).x;
     }
 
     // Update is called once per frame

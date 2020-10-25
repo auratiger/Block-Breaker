@@ -39,11 +39,6 @@ public class SettingsOptions : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetVolume(float volume)
-    {
-        audioMixer.SetFloat("volume", volume);
-    }
-
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
@@ -64,5 +59,27 @@ public class SettingsOptions : MonoBehaviour
     {
         FindObjectOfType<GameSession>().Controls = setting;
     }
-    
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMixer.SetFloat("MusicVolume", volume);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        audioMixer.SetFloat("SFXVolume", volume);
+    }
+
+    public void MuteMusic(bool isMute)
+    {
+        if (isMute)
+        {
+            audioMixer.SetFloat("MasterVolume", -80);
+        }
+        else
+        {
+            // when I implement saving state in the game TODO: save the last value of the master volume
+            audioMixer.SetFloat("MasterVolume", 0);
+        }
+    }
 }
